@@ -1,0 +1,6 @@
+db_connect.php
+config.php
+.DS_Store
+.vscode/
+*.log
+lorkut.sql

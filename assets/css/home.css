@@ -1,0 +1,48 @@
+.home-mobile {
+  display: none;
+}
+
+.hm-header {
+  padding: 20px;
+}
+
+.hm-title {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.hm-fortune {
+  padding: 0 20px;
+}
+
+.fortune-card-mobile {
+  background: white;
+  border-radius: 14px;
+  padding: 14px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.hm-feed {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+@media (max-width: 768px) {
+
+  .layout,
+  .sidebar-left,
+  .sidebar-right {
+    display: none;
+  }
+
+  .home-mobile {
+    display: block;
+    padding-bottom: 90px;
+  }
+
+}
