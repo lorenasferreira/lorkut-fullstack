@@ -44,6 +44,15 @@ function with_lang(string $path): string
   return $path . $sep . 'lang=' . urlencode($lang);
 }
 
+function current_url_with_lang(string $newLang): string
+{
+  $currentPath = strtok($_SERVER["REQUEST_URI"], '?');
+  $query = $_GET;
+  $query['lang'] = $newLang;
+
+  return $currentPath . '?' . http_build_query($query);
+}
+
 function asset($path) {
     return BASE_URL . ltrim($path, './');
 }
