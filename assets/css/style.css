@@ -150,15 +150,7 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
-.layout {
-  margin: 20px auto;
-  gap: 16px;
-  padding: 0 16px;
-  max-width: 1200px;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-}
+
 .sidebar-left {
   padding: 16px;
   display: flex;
@@ -236,70 +228,6 @@ body {
   align-items: flex-start;
 }
 
-.container-central {
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: 1fr;
-  gap: 12px;
-  text-align: center;
-}
-
-.profile-counters {
-  list-style: none;
-  display: grid;
-  grid-auto-flow: column;
-  gap: 12px;
-  text-align: left;
-  margin: 5px;
-}
-
-.stat .label {
-  font: 500 14px/1.2 "Work Sans", Inter, sans-serif;
-  color: var(--mute);
-}
-
-.stat .value {
-  min-height: 1.25em;
-  display: block;
-  line-height: 1;
-  font: 700 15px/1 "Work Sans", Inter, sans-serif;
-}
-.stat .icon {
-  width: 16px;
-  height: 16px;
-  object-fit: contain;
-  display: inline-block;
-  vertical-align: middle;
-}
-.divider-main {
-  border: none;
-  border-top: 2px double var(--gray);
-  margin: 0;
-  opacity: 0.6;
-  width: 100%;
-  max-width: 618px;
-}
-
-.profile-name-central {
-  font-size: 23px;
-  font-weight: 450;
-  margin-top: 15px;
-  margin-left: 5px;
-  font-family: "Work Sans";
-}
-
-.sidebar-right {
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 10px;
-  display: grid;
-  gap: 12px;
-  align-content: start;
-  flex: 0 0 260px;
-  min-width: 240px;
-}
-
 .right-bar-names {
   display: flex;
   justify-content: space-between;
@@ -316,23 +244,6 @@ body {
   background: #dfe7fb;
   border-radius: 10px;
   aspect-ratio: 1 / 1;
-}
-
-.dark-blue {
-  background-color: #e7f0f9;
-  margin-top: 0;
-  padding: 3px;
-  font-size: 15px;
-}
-
-.light-blue {
-  background-color: #f2f6fa;
-  font-size: 15px;
-  padding: 3px;
-}
-
-.profile-titles {
-  color: #4a4a4a;
 }
 
 .tm-item {
@@ -357,40 +268,7 @@ body {
   padding: 4px 8px;
   cursor: pointer;
 }
-.tm-form {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  margin-top: 12px;
-}
-.tm-actions {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.muted {
-  color: var(--mute);
-}
-.tm-avatar {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid #d5e9ff;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
-}
 
-.fortune-card {
-  display: flex;
-  gap: 12px;
-  align-items: flex-start;
-  background: #fff;
-  padding: 14px;
-  border-radius: 6px;
-  border: 1px solid #e5e5e5;
-  margin-bottom: 16px;
-  font-family: "Work Sans", sans-serif;
-}
 
 .fortune-title {
   font-weight: 700;
@@ -406,9 +284,6 @@ body {
   margin: 0;
 }
 
-.fortune-icon {
-  width: 42px;
-}
 .activity-feed {
   margin-top: 16px;
   display: flex;
@@ -526,8 +401,6 @@ body {
 }
 
 @media (max-width: 860px) {
-
-  /* esconder menu desktop */
   .menu,
   .logout-btn,
   .search,
@@ -546,7 +419,6 @@ body {
 
   .mnav-backdrop {
     display: block;
-    /* position: absolute; */
     inset: 0;
     background: rgba(0,0,0,.4);
     z-index: 998;

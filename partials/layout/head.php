@@ -7,6 +7,7 @@ $base = defined('BASE_URL') ? rtrim(BASE_URL, '/') : '';
 ?>
 <!DOCTYPE html>
 <html lang="<?= htmlspecialchars($lang) ?>">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -17,10 +18,12 @@ $base = defined('BASE_URL') ? rtrim(BASE_URL, '/') : '';
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Work+Sans:wght@400;600&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="<?= $base ?>/assets/css/style.css" />
-
+  <link rel="stylesheet" href="<?= $base ?>/assets/css/layout/footer.css" />
+  <link rel="stylesheet" href="<?= $base ?>/assets/css/layout/layout.css">
   <?php foreach ($pageCss as $css): ?>
-    <link rel="stylesheet" href="<?= $base ?>/assets/css/<?= htmlspecialchars($css) ?>" />
+  <link rel="stylesheet" href="<?= $base ?>/assets/css/pages/<?= htmlspecialchars($css) ?>" />
   <?php endforeach; ?>
 
 </head>
+
 <body>
