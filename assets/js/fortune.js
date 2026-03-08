@@ -1,15 +1,26 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const content = document.querySelector("#fortune-box .fortune-content");
+  const desktopContent = document.querySelector(
+    "#fortune-box .fortune-content",
+  );
+  const mobileContent = document.querySelector(
+    ".fortune-card-mobile .fortune-content",
+  );
 
-  fetch("/api/fortune.php?lang=en")
+  fetch(BASE_URL + "api/fortune.php?lang=en")
     .then((res) => res.json())
     .then((data) => {
-      content.innerHTML = `
+      const html = `
         <div class="fortune-title">Your luck of the day (${data.date})</div>
         <p class="fortune-text">${data.fortune}</p>
       `;
+
+      if (desktopContent) desktopContent.innerHTML = html;
+      if (mobileContent) mobileContent.innerHTML = html;
     })
     .catch(() => {
-      content.innerHTML = `<p class="fortune-text">Error loading fortune ☹️</p>`;
+      const errorHtml = `<p class="fortune-text">Error loading fortune ☹️</p>`;
+
+      if (desktopContent) desktopContent.innerHTML = errorHtml;
+      if (mobileContent) mobileContent.innerHTML = errorHtml;
     });
 });

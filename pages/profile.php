@@ -237,7 +237,7 @@ $mobileCommunities = $conn->query(
 <div class="profile-mobile">
 
   <section class="pm-header">
-   <img src="<?= BASE_URL ?>assets/img/avatar.png" class="pm-avatar" alt="Profile avatar">
+    <img src="<?= BASE_URL ?>assets/img/avatar.png" class="pm-avatar" alt="Profile avatar">
     <h1 class="pm-name"><?= t('common.name'); ?></h1>
     <p class="pm-location"><?= t('profile.values.hometown'); ?></p>
 
@@ -307,18 +307,17 @@ $mobileCommunities = $conn->query(
     </header>
 
     <div class="pm-horizontal-scroll">
-  <?php while ($p = $mobileProjects->fetch_assoc()): ?>
-    <div class="pm-card">
-      <a href="<?= BASE_URL ?>pages/project.php?slug=<?= urlencode($p['slug']) ?>">
-        <img 
-          src="<?= BASE_URL . htmlspecialchars(ltrim($p['thumbnail'], '/')) ?>" 
-          alt="<?= htmlspecialchars($p['title']) ?>"
-        >
-      </a>
-      <p><?= htmlspecialchars($p['title']) ?></p>
+      <?php while ($p = $mobileProjects->fetch_assoc()): ?>
+        <div class="pm-card">
+          <a href="<?= BASE_URL ?>pages/project.php?slug=<?= urlencode($p['slug']) ?>">
+            <img
+              src="<?= BASE_URL . htmlspecialchars(ltrim($p['thumbnail'], '/')) ?>"
+              alt="<?= htmlspecialchars($p['title']) ?>">
+          </a>
+          <p><?= htmlspecialchars($p['title']) ?></p>
+        </div>
+      <?php endwhile; ?>
     </div>
-  <?php endwhile; ?>
-</div>
   </section>
 
   <section class="pm-section">
@@ -328,27 +327,19 @@ $mobileCommunities = $conn->query(
     </header>
 
     <div class="pm-horizontal-scroll">
-  <?php while ($c = $mobileCommunities->fetch_assoc()): ?>
-    <div class="pm-card small">
-      <a href="<?= BASE_URL ?>pages/community.php?slug=<?= urlencode($c['slug']) ?>">
-        <img 
-          src="<?= BASE_URL . htmlspecialchars(ltrim($c['thumbnail'], '/')) ?>" 
-          alt="<?= htmlspecialchars($c['title']) ?>"
-        >
-      </a>
+      <?php while ($c = $mobileCommunities->fetch_assoc()): ?>
+        <div class="pm-card small">
+          <a href="<?= BASE_URL ?>pages/community.php?slug=<?= urlencode($c['slug']) ?>">
+            <img
+              src="<?= BASE_URL . htmlspecialchars(ltrim($c['thumbnail'], '/')) ?>"
+              alt="<?= htmlspecialchars($c['title']) ?>">
+          </a>
+        </div>
+      <?php endwhile; ?>
     </div>
-  <?php endwhile; ?>
-</div>
   </section>
 
 </div>
-
-<nav class="pm-bottom-nav">
-  <a href="home.php">Home</a>
-  <a href="search.php">Search</a>
-  <a href="projects.php">Projects</a>
-  <a href="profile.php" class="active">Profile</a>
-</nav>
 
 <script type="module" src="<?= BASE_URL ?>assets/js/main.js"></script>
 

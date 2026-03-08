@@ -28,8 +28,7 @@ $payload = $item['payload'];
   <div class="feed-body">
 
     <div class="feed-thumb-large">
-      <img 
-        src="<?= BASE_URL . htmlspecialchars(ltrim($payload['image'], '/')) ?>"
+      <img src="<?= asset($payload['image']) ?>"
         alt="<?= htmlspecialchars($payload['name']) ?>"
       >
     </div>

@@ -3,7 +3,7 @@ $payload = $item['payload'];
 ?>
 <div class="feed-item">
   <div class="feed-header">
-    <img src="<?= htmlspecialchars($payload['avatar_url']) ?>" alt="Author avatar" class="feed-avatar">
+    <img src="<?= asset($payload['avatar_url']) ?>" alt="Author avatar" class="feed-avatar">
     <div>
       <p class="feed-title">
         <strong><?= htmlspecialchars($payload['author']) ?></strong> left you a testimonial 💬
