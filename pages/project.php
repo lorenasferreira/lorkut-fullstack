@@ -33,13 +33,24 @@ $videosStmt = $conn->prepare("SELECT * FROM videos WHERE project_id = ?");
 $videosStmt->bind_param("i", $project['id']);
 $videosStmt->execute();
 $videos = $videosStmt->get_result();
+
+$photosStmt = $conn->prepare("
+  SELECT p.* 
+  FROM photos p
+  JOIN project_photos pp ON p.id = pp.photo_id
+  WHERE pp.project_id = ?
+");
+
+$photosStmt->bind_param("i", $project['id']);
+$photosStmt->execute();
+$photos = $photosStmt->get_result();
+
 ?>
 
 <main class="layout">
 
   <?php include __DIR__ . '/../partials/navigation/sidebar-left.php'; ?>
 
-  <!-- 🔥 CENTRAL CONTENT -->
   <section class="central-profile project-detail">
 
     <h1 class="project-title">
@@ -62,16 +73,16 @@ $videos = $videosStmt->get_result();
 
         <div class="project-buttons">
 
-          <?php if (!empty($project['repo_url'])): ?>
-            <a href="<?= htmlspecialchars($project['repo_url']); ?>"
+          <?php if (!empty($project['github_url'])): ?>
+            <a href="<?= htmlspecialchars($project['github_url']); ?>"
               target="_blank"
               class="btn-primary">
               GitHub Repo
             </a>
           <?php endif; ?>
 
-          <?php if (!empty($project['live_demo_url'])): ?>
-            <a href="<?= htmlspecialchars($project['live_demo_url']); ?>"
+          <?php if (!empty($project['live_url'])): ?>
+            <a href="<?= htmlspecialchars($project['live_url']); ?>"
               target="_blank"
               class="btn-secondary">
               Live Demo
@@ -84,7 +95,6 @@ $videos = $videosStmt->get_result();
 
     </div>
 
-    <!-- TECH STACK -->
     <?php if (!empty($techs)): ?>
       <h3 class="section-title">Tech Stack</h3>
       <div class="tech-stack">
@@ -96,7 +106,20 @@ $videos = $videosStmt->get_result();
       </div>
     <?php endif; ?>
 
-    <!-- VIDEOS -->
+    <h3 class="section-title">Project Photos</h3>
+
+    <?php if ($photos->num_rows === 0): ?>
+      <p class="muted">No screenshots yet.</p>
+    <?php else: ?>
+      <div class="photo-grid">
+        <?php while ($img = $photos->fetch_assoc()): ?>
+          <img
+            src="<?= BASE_URL . htmlspecialchars(ltrim($img['image_url'], '/')); ?>"
+            alt="Project Screenshot">
+        <?php endwhile; ?>
+      </div>
+    <?php endif; ?>
+
     <h3 class="section-title">Project Videos</h3>
 
     <?php if ($videos->num_rows === 0): ?>
@@ -114,7 +137,6 @@ $videos = $videosStmt->get_result();
 
   </section>
 
-  <!-- 🔥 RIGHT SIDEBAR (FORA DA SECTION!) -->
   <aside class="sidebar-right">
     <?php include __DIR__ . '/../partials/navigation/sidebar-right-projects.php'; ?>
     <?php include __DIR__ . '/../partials/navigation/sidebar-right-communities.php'; ?>
