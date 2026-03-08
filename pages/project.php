@@ -8,11 +8,6 @@ if (!$slug) {
   die('Project not found.');
 }
 
-/*
-|--------------------------------------------------------------------------
-| 1️⃣ Buscar projeto com idioma solicitado
-|--------------------------------------------------------------------------
-*/
 $stmt = $conn->prepare("
   SELECT 
     p.id,
@@ -34,11 +29,6 @@ $stmt->bind_param("ss", $slug, $lang);
 $stmt->execute();
 $project = $stmt->get_result()->fetch_assoc();
 
-/*
-|--------------------------------------------------------------------------
-| 2️⃣ Fallback para inglês se idioma não existir
-|--------------------------------------------------------------------------
-*/
 if (!$project && $lang !== 'en') {
   $fallbackStmt = $conn->prepare("
     SELECT 
@@ -77,21 +67,11 @@ if (!empty($project['tech_stack'])) {
   $techs = array_map('trim', explode(",", $project['tech_stack']));
 }
 
-/*
-|--------------------------------------------------------------------------
-| 3️⃣ Buscar vídeos
-|--------------------------------------------------------------------------
-*/
 $videosStmt = $conn->prepare("SELECT * FROM videos WHERE project_id = ?");
 $videosStmt->bind_param("i", $project['id']);
 $videosStmt->execute();
 $videos = $videosStmt->get_result();
 
-/*
-|--------------------------------------------------------------------------
-| 4️⃣ Buscar fotos
-|--------------------------------------------------------------------------
-*/
 $photosStmt = $conn->prepare("
   SELECT p.* 
   FROM photos p

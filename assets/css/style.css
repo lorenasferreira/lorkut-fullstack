@@ -12,6 +12,23 @@
   --dark-blue: #4b74b2;
   --border: #d0d7e2;
 }
+
+nav .locked .nav-link,
+nav .locked .nav-item {
+  color: inherit;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.lock-icon {
+  font-size: 0.75rem;
+  opacity: 0.9;
+}
+
 .sidebar-left * {
   box-sizing: border-box;
 }
