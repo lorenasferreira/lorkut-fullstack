@@ -114,5 +114,8 @@
 
   "feed.time.today": "Hoy",
   "feed.time.yesterday": "Ayer",
-  "feed.time.days_ago": "hace algunos días"
+  "feed.time.days_ago": "hace algunos días",
+
+  "communities.meta.title": "Comunidades | L.Orkut",
+  "communities.title": "Comunidades"
 }

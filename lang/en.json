@@ -113,5 +113,8 @@
   "feed.time.yesterday": "Yesterday",
   "feed.time.days_ago": "days ago",
   "feed.joined_community": "joined a new community",
-  "feed.updated_profile_photo": "updated their profile photo"
+  "feed.updated_profile_photo": "updated their profile photo",
+
+  "communities.meta.title": "Communities | L.Orkut",
+  "communities.title": "Communities"
 }

@@ -1,10 +1,9 @@
 <aside class="sidebar-left" aria-label="Profile navigation">
 
-  <img 
-    src="<?= BASE_URL ?>assets/img/avatar.png" 
-    alt="Profile picture" 
-    class="profile-picture"
-  />
+  <img
+    src="<?= BASE_URL ?>assets/img/avatar.png"
+    alt="Profile picture"
+    class="profile-picture" />
 
   <div class="profile-card">
     <h1 class="profile-name">Lorena Ferreira</h1>
@@ -21,19 +20,19 @@
         </li>
         <li>
           <img class="icons" src="<?= BASE_URL ?>assets/icons/book.svg" alt="" />
-          <a href="<?= BASE_URL ?>pages/scrapbook.php">scrapbook</a>
+          <span>scrapbook</span>
         </li>
         <li>
           <img class="icons" src="<?= BASE_URL ?>assets/icons/camera.svg" alt="" />
-          <a href="<?= BASE_URL ?>pages/photos.php">photos</a>
+          <span>photos</span>
         </li>
         <li>
           <img class="icons" src="<?= BASE_URL ?>assets/icons/video-camera.svg" alt="" />
-          <a href="<?= BASE_URL ?>pages/videos.php">videos</a>
+          <span>videos</span>
         </li>
         <li>
           <img class="icons" src="<?= BASE_URL ?>assets/icons/sun.svg" alt="" />
-          <a href="<?= BASE_URL ?>pages/testimonials.php">testimonials</a>
+          <span>testimonials</span>
         </li>
       </ul>
     </nav>

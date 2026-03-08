@@ -14,7 +14,12 @@ $currentLang = $_SESSION['lang'] ?? 'en';
       <ul class="menu">
         <li><a href="<?= with_lang('home.php'); ?>"><?= t('nav.home'); ?></a></li>
         <li><a href="<?= with_lang('profile.php'); ?>"><?= t('nav.profile'); ?></a></li>
-        <li><a href="<?= with_lang('scrapbook.php'); ?>"><?= t('nav.scrapbook'); ?></a></li>
+        <li class="locked">
+          <span class="nav-link">
+            <?= t('nav.scrapbook'); ?>
+            <span class="lock-icon">🔒</span>
+          </span>
+        </li>
         <li><a href="<?= with_lang('projects.php'); ?>"><?= t('nav.projects'); ?></a></li>
         <li><a href="<?= with_lang('communities.php'); ?>"><?= t('nav.communities'); ?></a></li>
       </ul>

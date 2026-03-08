@@ -1,0 +1,41 @@
+.community-page {
+  padding: 20px;
+}
+
+.community-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.community-content {
+  max-width: 650px;
+}
+
+.community-thumbnail {
+  width: 120px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  object-fit: cover;
+}
+
+.community-description {
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+
+  .sidebar-left,
+  .sidebar-right {
+    display: none;
+  }
+
+  .layout {
+    display: block;
+  }
+
+  .community-page {
+    padding: 16px;
+  }
+
+}
