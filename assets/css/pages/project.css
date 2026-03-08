@@ -19,19 +19,22 @@
 }
 
 .project-title {
-  font-size: 1.6rem;
-  margin-bottom: 20px;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 15px;
 }
 
 .project-hero {
   display: flex;
   gap: 30px;
-  align-items: flex-start;
+  align-items: center;
 }
 
 .project-hero-image img {
-  width: 420px;
-  border-radius: 12px;
+  width: 120px;
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
 }
 
 .project-hero-content {
@@ -49,21 +52,31 @@
 }
 
 .btn-primary {
-  background: #5c4df5;
+  background: var(--pink);
   color: white;
-  padding: 10px 18px;
+  padding: 12px 20px;
   border-radius: 8px;
   text-decoration: none;
   font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.btn-primary:hover {
+  background: #d94f1f;
 }
 
 .btn-secondary {
-  background: #e9e9f9;
-  color: #5c4df5;
-  padding: 10px 18px;
+  background: #e6f0fb;
+  color: #1b4f8a;
+  padding: 12px 20px;
   border-radius: 8px;
   text-decoration: none;
   font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background: #d2e4f8;
 }
 
 .tech-stack {
@@ -92,8 +105,19 @@
   gap: 15px;
 }
 
+.video-grid video {
+  width: 100%;
+  border-radius: 8px;
+}
+
 .video-card video {
   width: 100%;
+  border-radius: 10px;
+}
+
+.project-detail {
+  background: #f8fbff;
+  padding: 25px;
   border-radius: 10px;
 }
 
