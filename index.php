@@ -54,7 +54,7 @@ require_once __DIR__ . '/partials/layout/head.php';
         © <?= date('Y') ?> Lorena Ferreira — <?= t('footer.inspired') ?>
       </small>
       <nav class="foot-links" id="footerLinks" aria-label="Footer">
-        <a href="<?= BASE_URL ?>pages/about.php?lang=<?= $currentLang ?>" rel="nofollow"><?= t('footer.about') ?></a>
+        <a href="<?= BASE_URL ?>pages/about?lang=<?= $currentLang ?>" rel="nofollow"><?= t('footer.about') ?></a>
         <span aria-hidden="true">—</span>
         <a href="<?= $whatsappLink ?>" target="_blank" rel="noopener noreferrer">
           <?= t('footer.contact') ?>
