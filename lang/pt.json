@@ -13,11 +13,28 @@
   "login.avatar.alt": "Avatar de perfil de Lorena Ferreira",
   "login.cta.profile": "Visite meu perfil",
 
-  "footer.copy": "© 2025 Lorena Ferreira — Inspirado no Orkut",
+  "footer.inspired": "Inspirado no Orkut",
   "footer.about": "Sobre",
   "footer.contact": "Contato",
+  "footer.contact_message": "Oi, Lorena, tudo bem? Gostaria de saber mais sobre o seu trabalho.",
   "footer.privacy": "Privacidade",
   "footer.terms": "Termos",
+
+  "about.title": "Sobre este projeto",
+  "about.paragraph.1": "L.Orkut é um projeto nostálgico inspirado nos primeiros dias da internet — uma época em que os perfis eram coloridos, sinceros e cheios de personalidade.",
+  "about.paragraph.2": "Desenvolvi este projeto para explorar o desenvolvimento full-stack, combinando criatividade, narrativa e arquitetura limpa.",
+
+  "privacy.meta.title": "Privacidade | L.Orkut",
+  "privacy.title": "Política de Privacidade",
+  "privacy.paragraph.1": "L.Orkut é um projeto pessoal de portfólio criado para fins educacionais e criativos.",
+  "privacy.paragraph.2": "Este site não coleta dados pessoais sensíveis, não utiliza cookies de rastreamento e não compartilha informações com terceiros.",
+  "privacy.paragraph.3": "Quaisquer depoimentos ou interações exibidas fazem parte da experiência do projeto e não são utilizados para processamento comercial de dados.",
+
+  "terms.meta.title": "Termos | L.Orkut",
+  "terms.title": "Termos de Uso",
+  "terms.paragraph.1": "L.Orkut é um projeto pessoal de portfólio criado para fins educacionais e criativos.",
+  "terms.paragraph.2": "Este projeto é inspirado no design nostálgico da plataforma original Orkut, mas não possui qualquer afiliação, endosso ou vínculo com o Google ou com a marca original.",
+  "terms.paragraph.3": "Todo o conteúdo apresentado neste site faz parte de um portfólio pessoal e não deve ser interpretado como um serviço comercial de rede social.",
 
   "profile.meta.title": "Perfil | L.Orkut",
 
