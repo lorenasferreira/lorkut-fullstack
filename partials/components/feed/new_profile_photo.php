@@ -2,9 +2,8 @@
 $payload = $item['payload'];
 $photoPath = $payload['photo'] ?? '';
 
-/* Normaliza caminho */
 if ($photoPath && !str_starts_with($photoPath, 'http')) {
-    $photoPath = BASE_URL . ltrim($photoPath, '/');
+    $photoPath = BASE_URL . ltrim($photoPath, './');
 }
 ?>
 

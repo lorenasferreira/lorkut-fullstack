@@ -43,3 +43,7 @@ function with_lang(string $path): string
   $sep = str_contains($path, '?') ? '&' : '?';
   return $path . $sep . 'lang=' . urlencode($lang);
 }
+
+function asset($path) {
+    return BASE_URL . ltrim($path, './');
+}

@@ -1,0 +1,22 @@
+.pm-bottom-nav {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .pm-bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 1px solid #eee;
+  }
+
+  .pm-bottom-nav a.active {
+    font-weight: bold;
+  }
+}
