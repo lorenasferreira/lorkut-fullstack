@@ -29,8 +29,7 @@ require_once __DIR__ . '/partials/layout/head.php';
         <img
           class="avatar"
           src="./assets/img/avatar.png"
-          alt="<?= htmlspecialchars(t('login.avatar.alt')) ?>"
-        />
+          alt="<?= htmlspecialchars(t('login.avatar.alt')) ?>" />
 
         <div class="who">
           <div class="who-name"><?= t('common.name') ?></div>
@@ -45,21 +44,30 @@ require_once __DIR__ . '/partials/layout/head.php';
       </section>
     </aside>
   </div>
-
+  <?php
+  $message = urlencode(t('footer.contact_message'));
+  $whatsappLink = "https://wa.me/34662321407?text={$message}";
+  ?>
   <footer class="footerbar" role="contentinfo">
     <div class="footer-inner">
-      <small class="copy" id="footerCopy"><?= t('footer.copy') ?></small>
+      <small class="copy">
+        © <?= date('Y') ?> Lorena Ferreira — <?= t('footer.inspired') ?>
+      </small>
       <nav class="foot-links" id="footerLinks" aria-label="Footer">
-        <a href="#" rel="nofollow"><?= t('footer.about') ?></a>
+        <a href="<?= BASE_URL ?>pages/about.php?lang=<?= $currentLang ?>" rel="nofollow"><?= t('footer.about') ?></a>
         <span aria-hidden="true">—</span>
-        <a href="#" rel="nofollow"><?= t('footer.contact') ?></a>
+        <a href="<?= $whatsappLink ?>" target="_blank" rel="noopener noreferrer">
+          <?= t('footer.contact') ?>
+        </a>
         <span aria-hidden="true">—</span>
-        <a href="#" rel="nofollow"><?= t('footer.privacy') ?></a>
+        <a href="<?= BASE_URL ?>pages/privacy.php?lang=<?= $currentLang ?>">
+          <?= t('footer.privacy') ?>
+        </a>
         <span aria-hidden="true">—</span>
-        <a href="#" rel="nofollow"><?= t('footer.terms') ?></a>
+        <a href="<?= BASE_URL ?>pages/terms.php?lang=<?= $currentLang ?>" rel="nofollow">
+          <?= t('footer.terms') ?>
+        </a>
       </nav>
     </div>
   </footer>
 </main>
-
-<?php require_once __DIR__ . '/partials/layout/footer.php'; ?>

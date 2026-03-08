@@ -8,10 +8,58 @@ if (!$slug) {
   die('Project not found.');
 }
 
-$stmt = $conn->prepare("SELECT * FROM projects WHERE slug = ?");
-$stmt->bind_param("s", $slug);
+/*
+|--------------------------------------------------------------------------
+| 1️⃣ Buscar projeto com idioma solicitado
+|--------------------------------------------------------------------------
+*/
+$stmt = $conn->prepare("
+  SELECT 
+    p.id,
+    p.slug,
+    p.thumbnail,
+    p.tech_stack,
+    p.github_url,
+    p.live_url,
+    pt.title,
+    pt.short_description,
+    pt.full_description
+  FROM projects p
+  JOIN project_translations pt 
+    ON pt.project_id = p.id
+  WHERE p.slug = ? AND pt.lang = ?
+");
+
+$stmt->bind_param("ss", $slug, $lang);
 $stmt->execute();
 $project = $stmt->get_result()->fetch_assoc();
+
+/*
+|--------------------------------------------------------------------------
+| 2️⃣ Fallback para inglês se idioma não existir
+|--------------------------------------------------------------------------
+*/
+if (!$project && $lang !== 'en') {
+  $fallbackStmt = $conn->prepare("
+    SELECT 
+      p.id,
+      p.slug,
+      p.thumbnail,
+      p.tech_stack,
+      p.github_url,
+      p.live_url,
+      pt.title,
+      pt.short_description,
+      pt.full_description
+    FROM projects p
+    JOIN project_translations pt 
+      ON pt.project_id = p.id
+    WHERE p.slug = ? AND pt.lang = 'en'
+  ");
+  $fallbackStmt->bind_param("s", $slug);
+  $fallbackStmt->execute();
+  $project = $fallbackStmt->get_result()->fetch_assoc();
+}
 
 if (!$project) {
   http_response_code(404);
@@ -29,11 +77,21 @@ if (!empty($project['tech_stack'])) {
   $techs = array_map('trim', explode(",", $project['tech_stack']));
 }
 
+/*
+|--------------------------------------------------------------------------
+| 3️⃣ Buscar vídeos
+|--------------------------------------------------------------------------
+*/
 $videosStmt = $conn->prepare("SELECT * FROM videos WHERE project_id = ?");
 $videosStmt->bind_param("i", $project['id']);
 $videosStmt->execute();
 $videos = $videosStmt->get_result();
 
+/*
+|--------------------------------------------------------------------------
+| 4️⃣ Buscar fotos
+|--------------------------------------------------------------------------
+*/
 $photosStmt = $conn->prepare("
   SELECT p.* 
   FROM photos p

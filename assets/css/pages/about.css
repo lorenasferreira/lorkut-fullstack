@@ -1,0 +1,43 @@
+.about-page {
+  padding: 20px;
+}
+
+.about-title {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.about-content p {
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+
+.about-links {
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+}
+
+.about-links a {
+  text-decoration: none;
+  color: #5c2d91;
+  font-weight: 600;
+}
+
+.about-links a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+
+  .sidebar-left,
+  .sidebar-right {
+    display: none;
+  }
+
+  .central-profile {
+    width: 100%;
+    padding: 16px;
+  }
+
+}

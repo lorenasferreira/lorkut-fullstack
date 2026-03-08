@@ -24,17 +24,17 @@ $currentLang = $_SESSION['lang'] ?? 'en';
     <div class="topbar__right">
 
       <div class="lang-switch">
-        <a href="<?= BASE_URL ?>/pages/profile.php?lang=en"
-           <?= $currentLang === 'en' ? 'aria-current="true"' : '' ?>>EN</a>
+        <a href="<?= current_url_with_lang('en'); ?>"
+          <?= $currentLang === 'en' ? 'aria-current="true"' : '' ?>>EN</a>
 
-        <a href="<?= BASE_URL ?>pages/profile.php?lang=pt"
-           <?= $currentLang === 'pt' ? 'aria-current="true"' : '' ?>>PT</a>
+        <a href="<?= current_url_with_lang('pt'); ?>"
+          <?= $currentLang === 'pt' ? 'aria-current="true"' : '' ?>>PT</a>
 
-        <a href="<?= BASE_URL ?>/pages/profile.php?lang=es"
-           <?= $currentLang === 'es' ? 'aria-current="true"' : '' ?>>ES</a>
+        <a href="<?= current_url_with_lang('es'); ?>"
+          <?= $currentLang === 'es' ? 'aria-current="true"' : '' ?>>ES</a>
 
-        <a href="<?= BASE_URL ?>/pages/profile.php?lang=fr"
-           <?= $currentLang === 'fr' ? 'aria-current="true"' : '' ?>>FR</a>
+        <a href="<?= current_url_with_lang('fr'); ?>"
+          <?= $currentLang === 'fr' ? 'aria-current="true"' : '' ?>>FR</a>
       </div>
 
       <a href="<?= BASE_URL ?>/index.php" class="logout-btn">
@@ -46,16 +46,14 @@ $currentLang = $_SESSION['lang'] ?? 'en';
           class="search__input"
           type="search"
           name="q"
-          placeholder="<?= t('nav.search_placeholder'); ?>"
-        />
+          placeholder="<?= t('nav.search_placeholder'); ?>" />
       </form>
 
       <button type="submit" class="search-btn" aria-label="<?= t('nav.search'); ?>">
         <svg width="29" height="29" viewBox="0 0 39 39" fill="none">
           <path
             d="M31.85 34.125L21.6125 23.8875C20.8 24.5375 19.8656 25.0521 18.8094 25.4313C17.7531 25.8104 16.6292 26 15.4375 26C12.4854 26 9.98698 24.9776 7.94219 22.9328C5.8974 20.888 4.875 18.3896 4.875 15.4375C4.875 12.4854 5.8974 9.98698 7.94219 7.94219C9.98698 5.8974 12.4854 4.875 15.4375 4.875C18.3896 4.875 20.888 5.8974 22.9328 7.94219C24.9776 9.98698 26 12.4854 26 15.4375C26 16.6292 25.8104 17.7531 25.4313 18.8094C25.0521 19.8656 24.5375 20.8 23.8875 21.6125L34.125 31.85L31.85 34.125Z"
-            fill="#d2cfcf"
-          />
+            fill="#d2cfcf" />
         </svg>
       </button>
 
